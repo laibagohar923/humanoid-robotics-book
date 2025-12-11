@@ -1,35 +1,26 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+// ❌ REMOVE THIS — it was causing crash
+// import '../css/custom.css';
 
 const config: Config = {
-  title: 'Physical AI & Humanoid Robotics ',
-  // tagline: 'Dinosaurs are cool',
+  title: 'Physical AI & Humanoid Robotics',
   favicon: 'img/pic2.png',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/humanoid-robotics-book/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'laibagohar', // Usually your GitHub org/user name.
-  projectName: 'humanoid-robotics-book', // Usually your repo name.
+  organizationName: 'laibagohar',
+  projectName: 'humanoid-robotics-book',
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -41,125 +32,94 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
-          // customCss: './src/css/custom.css',
+          // ✅ Correct CSS path (KEEP THIS)
+          customCss: require.resolve('./src/css/custom.css'),
         },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+
     colorMode: {
       respectPrefersColorScheme: true,
+      defaultMode: 'dark',
     },
+
+    palette: {
+      primary: '#eab308',
+      primaryDark: '#c48e06',
+      primaryLight: '#facc15',
+    },
+
     navbar: {
-      title: ' Humanoid Robotics',
+      title: 'Humanoid Robotics',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Logo',
         src: 'img/pic2.png',
       },
       items: [
-      
-                {
+        {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'Modules',
+        },
+        { to: '/docs/about', label: 'About', position: 'left' },
+        { to: '/docs/contact', label: 'Contact', position: 'left' },
+
+        {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
           position: 'right',
         },
       ],
     },
-    // footer: {
-    //   style: 'dark',
-    //   links: [
-    //     {
-    //       title: 'Community',
-    //       items: [
-    //         {
-    //           label: 'Stack Overflow',
-    //           href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-    //         },
-    //         {
-    //           label: 'Discord',
-    //           href: 'https://discordapp.com/invite/docusaurus',
-    //         },
-    //         {
-    //           label: 'X',
-    //           href: 'https://x.com/docusaurus',
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: 'More',
-    //       items: [
-    //         {
-    //           label: 'GitHub',
-    //           href: 'https://github.com/facebook/docusaurus',
-    //         },
-    //       ],
-    //     },
-    //   ],
-    //   copyright: `Copyright © ${new Date().getFullYear()} Laiba Gohar Inc. Built with Docusaurus.`,
-    // },
 
     footer: {
-  style: 'light',
-  links: [
-    {
-      title: 'Explore',
-      items: [
+      style: 'light',
+      links: [
         {
-          label: 'All Modules',
-          to: '/docs/modules/module1/',
+          title: 'Explore',
+          items: [
+            { label: 'All Modules', to: '/docs/modules/module1/' },
+            {
+              label: 'GitHub Repository',
+              href: 'https://github.com/laibagohar/humanoid-robotics-book',
+            },
+          ],
         },
         {
-          label: 'GitHub Repository',
-          href: 'https://github.com/laibagohar/humanoid-robotics-book',
-        },
-      ],
-    },
-    {
-      title: 'Community',
-      items: [
-        {
-          label: 'LinkedIn',
-          href: 'https://linkedin.com/',
+          title: 'Community',
+          items: [
+            { label: 'LinkedIn', href: 'https://linkedin.com/' },
+            { label: 'Discord', href: 'https://discord.com/' },
+          ],
         },
         {
-          label: 'Discord',
-          href: 'https://discord.com/',
+          title: 'More',
+          items: [{ label: 'Documentation', to: '/docs/modules/module1/' }],
         },
       ],
+      copyright: `
+        <div style="text-align:center; padding-top:10px; color:#000;">
+          © ${new Date().getFullYear()} Humanoid Robotics Textbook — Built by Laiba Gohar
+          <br/>
+          <span style="color:#eab308;">Powered by Docusaurus</span>
+        </div>
+      `,
     },
-    {
-      title: 'More',
-      items: [
-        {
-          label: 'Documentation',
-          to: '/docs/modules/module1/',
-        },
-      ],
-    },
-  ],
-  copyright: `
-    <div style="text-align:center; padding-top:10px; color:#000;">
-      © ${new Date().getFullYear()} Humanoid Robotics Textbook — Built by Laiba Gohar
-      <br/>
-      <span style="color:#eab308;">Powered by Docusaurus</span>
-    </div>
-  `,
-},
 
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-  } satisfies Preset.ThemeConfig,
+  },
 };
 
 export default config;

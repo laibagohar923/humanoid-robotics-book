@@ -1,0 +1,145 @@
+:root {
+  --ifm-color-primary: #eab308;
+  --ifm-color-primary-dark: #c48e06;
+  --ifm-color-primary-darker: #9c7005;
+  --ifm-color-primary-darkest: #6b4e03;
+
+  --ifm-color-primary-light: #facc15;
+  --ifm-color-primary-lighter: #fce46e;
+  --ifm-color-primary-lightest: #fff7bf;
+}
+
+/* DARK MODE FIX */
+html[data-theme='dark'] {
+  --ifm-color-primary: #facc15;
+  --ifm-color-primary-dark: #d4a80f;
+  --ifm-color-primary-darker: #9e7c0b;
+  --ifm-color-primary-darkest: #6b5407;
+
+  --ifm-color-primary-light: #ffe36b;
+  --ifm-color-primary-lighter: #ffef9d;
+  --ifm-color-primary-lightest: #fffbd5;
+}
+
+
+/* FIX SIDEBAR ACTIVE TEXT (your version specific) */
+.menu__list-item--active > .menu__link,
+.menu__link--active {
+  color: #facc15 !important;
+  font-weight: 700 !important;
+}
+
+/* Prevent blue override */
+.menu__link--active:not(.menu__link--sublist) {
+  color: #facc15 !important;
+}
+
+/* Active blue background remover */
+.menu__link--active {
+  background: none !important;
+}
+
+/* Hover also yellow */
+.menu__link:hover {
+  color: #facc15 !important;
+}
+
+/* Blue left line → Yellow */
+.menu__list-item--active::before {
+  background-color: #facc15 !important;
+}
+
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(15px);
+}
+
+/* Navbar logo round */
+.navbar__brand img {
+  border-radius: 50%;   
+  width: 50px;          
+  height: 38px;         
+  object-fit: cover;    
+}
+
+/* ---------- CONTAINER PADDING ---------- */
+.container {
+  padding-top: 1rem !important;
+}
+
+/* ---------- CARDS FOR MODULES ---------- */
+.card {
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.25s ease;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* ---------- CODE BLOCKS ---------- */
+.codeBlockWrapper {
+  border-radius: 10px !important;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------- LINKS ---------- */
+a {
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: var(--ifm-color-primary-lightest);
+}
+
+footer{
+    box-shadow: 0 0 15px #d4a80f;
+}
+
+
+
+/* Make the edit container shrink to button size */
+/* ================================
+   REMOVE BIG YELLOW BOX
+   ================================ */
+.theme-doc-footer,
+.theme-edit-this-page--container,
+.row .col:has(.theme-edit-this-page) {
+  width: auto !important;
+  max-width: fit-content !important;
+  box-shadow: none !important;
+  background: none !important;
+  padding: 0 !important;
+  margin-top: 20px !important;
+}
+
+/* ================================
+   EDIT THIS PAGE BUTTON (CLEAN)
+   ================================ */
+.theme-edit-this-page a {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: #facc15 !important;
+  color: #000 !important;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none !important;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  transition: 0.25s ease;
+  white-space: nowrap !important;   /* text ek line me rahe */
+}
+
+/* Hover Effect */
+.theme-edit-this-page a:hover {
+  background: #eab308 !important;
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 10px rgba(234, 179, 8, 0.25);
+}

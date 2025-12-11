@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
+ import '../css/custom.css';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 function HomepageHeader() {
@@ -193,7 +194,7 @@ function HomepageHeader() {
 
 /* Paragraph styling */
 .whiteSectionParagraph {
-  color: #000 !important;
+  color: #000000ff !important;
   opacity: 1 !important;
 }
 
@@ -216,7 +217,7 @@ function HomepageHeader() {
 
 /* CARD BASE STYLE */
 .moduleCard {
-  background: #000;
+  background: #ffffffff;
   padding: 25px;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(234, 179, 8, 0.25); /* soft yellow shadow */
@@ -224,12 +225,14 @@ function HomepageHeader() {
   animation: fadeInUp 0.7s ease forwards;
   border: 1px solid rgba(234, 179, 8, 0.15);
   color: #fff;
+  border: 1px solid #eab308;
 }
 
 /* HOVER EFFECT */
 .moduleCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 26px rgba(234, 179, 8, 0.45); /* stronger yellow glow */
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45); /* stronger yellow glow */
+  
 }
 
 /* TITLE */
@@ -237,35 +240,44 @@ function HomepageHeader() {
   font-size: 1.25rem;
   margin-bottom: 10px;
   font-weight: 700;
-  color: #fff;
+  color: #000000ff;
 }
 
 /* TEXT */
 .moduleCard p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #fff;
+  color: black;
   opacity: 0.85;
+  font: bold;
 }
 
-/* BUTTON */
+/* CLEAN BUTTON */
 .moduleButton {
   display: inline-block;
   margin-top: 15px;
-  padding: 12px 70px;
-  background: #facc15;
-  color: #000;
+  padding: 14px 26px;
   font-weight: 600;
-  border-radius: 34px;
+  border-radius: 10px;
   text-decoration: none;
-  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  color: #000;
+
+  /* Soft elegant gradient */
+  background: linear-gradient(135deg, #facc15, #f7d94c);
+
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.35s ease;
 }
 
-/* BUTTON HOVER */
+/* HOVER: clean lift + soft black shadow */
 .moduleButton:hover {
-  background: #eab308;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(234, 179, 8, 0.35);
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #eab308, #f4c900);
+
+  /* Premium soft shadow – NOT yellow */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 /* Fade animation */
@@ -278,13 +290,105 @@ function HomepageHeader() {
     opacity: 1;
     transform: translateY(0);
   }
-    
 }
 
-footer: {
-  style: 'dark',
-  links: [ ... ],
-  copyright: ...
+/* ============================== */
+/* WHY SECTION (3 BOXES) */
+/* ============================== */
+
+.whySection {
+  background: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.whyHeading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.whyHeading:hover {
+  color: #eab308;
+  transform: translateY(-4px);
+}
+
+.whyGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.whyCard {
+  background: #ffffffff;
+  padding: 9px;
+  border-radius: 30px;
+  text-align: left;
+  transition: 0.3s ease;
+  border: 1px solid #eab308;
+}
+
+.whyCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 28px rgba(0, 0, 0, 0.45); /* dark yellow shadow */
+}
+
+.whyCard h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color:black;
+}
+
+.whyCard p {
+  font-size: 1.05rem;
+  color: #000000ff;
+  line-height: 1.7;
+}
+
+/* ICONS */
+.whyIcon {
+  font-size: 40px;
+  color: #eab308;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Heading Underline Animation */
+.whyHeading {
+  position: relative;
+}
+
+.whyHeading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  width: 0;
+  height: 4px;
+  background: #eab308;
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+}
+
+.whyHeading:hover::after {
+  width: 80%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .whyCard {
+    padding: 22px;
+  }
+  .whyHeading {
+    font-size: 2rem;
+  }
 }
 
 
@@ -394,6 +498,44 @@ footer: {
       <p>Kinematics, actuation, morphologies, energy systems, and humanoid robot movement.</p>
       <a href="/humanoid-robotics-book/docs/modules/module6/" className="moduleButton">Open Module →</a>
     </div>
+  </div>
+</section>
+{/* WHY THIS TEXTBOOK SECTION */}
+<section className="whySection">
+  <h2 className="whyHeading">Built for AI-Powered Robotics <br></br> Intelligent Systems</h2>
+
+  <div className="whyGrid">
+
+    <div className="whyCard">
+      <span className="whyIcon">🤖</span>
+      <h3>Engineered for Modern Robotics</h3>
+      <p>
+        This textbook is built around real humanoid robotics workflows —
+        covering sensing, control, AI reasoning, VLA pipelines, and intelligent
+        robot behavior used in next-generation systems.
+      </p>
+    </div>
+
+    <div className="whyCard">
+      <span className="whyIcon">🛠️</span>
+      <h3>Learn by Building Real Systems</h3>
+      <p>
+        Each module includes hands-on coding, simulations, engineering tasks,
+        and practical robotic scenarios so you develop actual industry-ready
+        robotics skills step by step.
+      </p>
+    </div>
+
+    <div className="whyCard">
+      <span className="whyIcon">🏭</span>
+      <h3>Aligned with Industry Standards</h3>
+      <p>
+        The curriculum follows robotics stacks used by leading teams such as
+        Tesla, Figure, Apptronik, and Sanctuary AI — ensuring you learn
+        technologies shaping the future of humanoid machines.
+      </p>
+    </div>
+
   </div>
 </section>
 
