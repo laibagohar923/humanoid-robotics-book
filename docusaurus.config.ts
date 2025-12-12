@@ -11,7 +11,7 @@ const config: Config = {
   },
 
   // ⭐ MUST FIX FOR VERCEL (CORRECT URL)
-  url: 'https://humanoid-robotics-book-c8pg.vercel.app',
+  url: 'https://humanoid-robotics-book-ten.vercel.app/',
 
   // ⭐ MUST FIX FOR SUB-PATH DEPLOYMENT
   baseUrl: '/',
@@ -115,3 +115,4 @@ const config: Config = {
 };
 
 export default config;
+
