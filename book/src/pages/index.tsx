@@ -458,7 +458,7 @@ function HomepageHeader() {
         </p>
       </section>
 
-      <section className="modulesSection">
+      {/* <section className="modulesSection">
   <h2 className="whiteHeading">Explore All Modules</h2>
 
   <div className="modulesGrid">
@@ -466,19 +466,19 @@ function HomepageHeader() {
     <div className="moduleCard">
       <h3>Module 1: ROS 2 Foundations</h3>
       <p>Learn ROS 2: nodes, topics, services, actions, QoS, and complete robot workflows.</p>
-      <a href="/humanoid-robotics-book/docs/modules/module1/" className="moduleButton">Open Module →</a>
+      <a href="/humanoid-robotics-book/docs/modules/module1/intro.md" className="moduleButton">Open Module →</a>
     </div>
 
     <div className="moduleCard">
       <h3>Module 2: Simulation & Digital Twins</h3>
       <p>Master Gazebo, Unity Robotics, Isaac Sim, and robotic digital-twin training pipelines.</p>
-      <a href="/humanoid-robotics-book/docs/modules/module2/" className="moduleButton">Open Module →</a>
+      <a href="/humanoid-robotics-book/docs/modules/module2/intro" className="moduleButton">Open Module →</a>
     </div>
 
     <div className="moduleCard">
       <h3>Module 3: Hardware Foundations</h3>
       <p>Motors, actuators, torque control, sensors, microcontrollers — essential robotics hardware.</p>
-      <a href="/humanoid-robotics-book/docs/modules/module3/" className="moduleButton">Open Module →</a>
+      <a href="docs/modules/module3/intro.md" className="moduleButton">Open Module →</a>
     </div>
 
     <div className="moduleCard">
@@ -499,7 +499,61 @@ function HomepageHeader() {
       <a href="/humanoid-robotics-book/docs/modules/module6/" className="moduleButton">Open Module →</a>
     </div>
   </div>
+</section> */}
+
+
+<section className="modulesSection">
+  <h2 className="whiteHeading">Explore All Modules</h2>
+
+  <div className="modulesGrid">
+
+    {/* Module 1 */}
+    <div className="moduleCard">
+      <h3>Module 1: ROS 2 Foundations</h3>
+      <p>Learn ROS 2: nodes, topics, services, actions, QoS, and complete robot workflows.</p>
+      <a href="/docs/modules/module1/" className="moduleButton">Open Module →</a>
+    </div>
+
+    {/* Module 2 */}
+    <div className="moduleCard">
+      <h3>Module 2: Simulation & Digital Twins</h3>
+      <p>Master Gazebo, Unity Robotics, Isaac Sim, and robotic digital-twin training pipelines.</p>
+      <a href="/docs/modules/module2/" className="moduleButton">Open Module →</a>
+    </div>
+
+    {/* Module 3 */}
+    <div className="moduleCard">
+      <h3>Module 3: Hardware Foundations</h3>
+      <p>Motors, actuators, torque control, sensors, microcontrollers — essential robotics hardware.</p>
+      <a href="/docs/modules/module3/" className="moduleButton">Open Module →</a>
+    </div>
+
+    {/* Module 4 */}
+    <div className="moduleCard">
+      <h3>Module 4: VLA — Vision, Language & Action</h3>
+      <p>Advanced robotics AI: perception, LLM-control, action planners, and embodied intelligence.</p>
+      <a href="/docs/modules/module4/" className="moduleButton">Open Module →</a>
+    </div>
+
+    {/* Module 5 */}
+    <div className="moduleCard">
+      <h3>Module 5: Advanced AI & Motion Control</h3>
+      <p>Reinforcement learning, MPC, motion planning, and intelligent robot movement.</p>
+      <a href="/docs/modules/module5/" className="moduleButton">Open Module →</a>
+    </div>
+
+    {/* Module 6 */}
+    <div className="moduleCard">
+      <h3>Module 6: Designing Humanoid Robots</h3>
+      <p>Kinematics, actuation, morphologies, energy systems, and humanoid robot movement.</p>
+      <a href="/docs/modules/module6/" className="moduleButton">Open Module →</a>
+    </div>
+
+  </div>
 </section>
+
+
+
 {/* WHY THIS TEXTBOOK SECTION */}
 <section className="whySection">
   <h2 className="whyHeading">Built for AI-Powered Robotics <br></br> Intelligent Systems</h2>
